@@ -1,0 +1,58 @@
+<!--pages/details/details.wxml-->
+<view wx:for="{{detailsGoods}}" wx:for-item="details">
+  <!-- 轮播图 -->
+  <swiper indicator-dots="true" indicator-color="rgba(255, 255, 255, 1)" indicator-active-color="#FB6600"
+    autoplay="true" interval="3000" circular="true" style="height:{{Hei}}">
+    <block wx:for="{{details.detailsImg}}" wx:for-item="swip" wx:key="*this">
+      <swiper-item>
+        <image src="{{swip}}" mode="widthFix" bindload="imgH"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 价格 -->
+  <view class="content">
+    <view class="price">
+      <text class="new">￥{{details.newPrice}}</text>
+      <text class="old">{{details.oldPrice}}</text>
+    </view>
+    <view class="title">
+      <text>{{details.title}}</text>
+    </view>
+    <view class="dec">
+      <text>{{details.dec}}</text>
+    </view>
+  </view>
+
+  <!-- 商品详情 -->
+  <view class="goodsDetails">商品详情</view>
+  <view>
+    <view wx:for="{{details.describeImg}}" wx:for-item="desc">
+      <image src="{{desc}}" mode="widthFix"></image>
+    </view>
+  </view>
+
+  <!-- 底部 -->
+  <view class="down">
+    <view class="left">
+      <view class="one" bindtap="toIndex">
+        <image src="../../images/shouye.png" mode="widthFix"></image>
+        <view>首页</view>
+      </view>
+      <view class="one" bindtap="toCar">
+        <image src="../../images/car.png" mode="widthFix"></image>
+        <view>购物车</view>
+        <view class="getCarNum" wx:if="{{isBlock}}">{{getCarNum}}</view>
+      </view>
+      <view class="one" bindtap="getFavoriteList">
+        <image src="{{favoriteImg}}" mode="widthFix"></image>
+        <view>收藏</view>
+      </view>
+    </view>
+    <view class="right">
+      <view class="addCar" bindtap="addCar">加入购物车</view>
+      <view class="goBuy" bindtap="toSettlement">立即购买</view>
+    </view>
+  </view>
+
+</view>

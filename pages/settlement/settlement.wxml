@@ -1,0 +1,51 @@
+<view>
+  <!-- 地址为空 -->
+  <view class="emptySite" wx:if="{{isBlock}}" bindtap="toAddSite">
+    <image src="../../images/dizhi.png" mode="widthFix"></image>
+    <view class="text">添加新地址</view>
+    <view class="right">></view>
+    <view class="bg" style="background: url(../../images/bg.png);"></view>
+  </view>
+  <!-- 地址不为空 -->
+  <view class="address" wx:else bindtap="toChangeSite">
+    <view wx:for="{{addressList}}" wx:key="*this">
+    <view class="text">{{item.areaInfo}}</view>
+    <view class="text">{{item.detailSite}}</view>
+    <view class="text">
+      <text>{{item.name}}</text>
+      <text>{{item.phone}}</text>
+    </view>
+    <view class="right">></view>
+    <view class="bg" style="background: url(../../images/bg.png);"></view>
+  </view>
+</view>
+  <!-- 商品 -->
+  <view class="goods" scroll-y="true" style="height:{{Hei}}px">
+    <view class="item" >
+        <view class="goods" wx:for="{{settlementList}}" wx:key="*this">
+          <image src="{{item.img}}" mode="widthFix"></image>
+          <view class="middle">
+            <view class="title">{{item.title}}</view>
+            <view class="dec">{{item.dec}}</view>
+          </view>
+          <view class="right">
+            <view class="price">￥{{item.price}}</view>
+            <view class="num">x{{item.num}}</view>
+          </view>
+        </view>
+      </view>
+  </view>
+  <view class="down">
+    <view class="list">
+      <view class="left">
+        <text>共</text>
+        <text>{{totalNum}}</text>
+        <text>件，合计</text>
+        <text class="price">￥{{totalPrice}}</text>
+      </view>
+      <view class="right">
+        <view class="goBuy" bindtap="openModal">结账</view>
+      </view>
+    </view>
+  </view>
+</view>

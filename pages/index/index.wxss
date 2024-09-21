@@ -1,0 +1,52 @@
+/* pages/index/index.wxss */
+image{
+  width: 100%;
+}
+.list{
+  width: 100%;
+  overflow: hidden;
+}
+.list .lists{
+  width: 20%;
+  float: left;
+}
+.goodsList{
+  width: 100%;
+  overflow: hidden;
+}
+.goodsList .select{
+  width: 50%;
+  text-align: center;
+  float: left;
+}
+.goodsList .select .select-mar{
+  margin:0 10px;
+}
+.goodsList .select .title{
+  font-size: 16px;
+  margin: 10px;
+}
+.goodsList .select .dec{
+  color: #767676;
+  font-size: 12px;
+}
+.goodsList .select .price{
+  margin:10px;
+  color: #EB625C;
+  font-size: 14px;
+}
+.goodsList .select .price .new{
+  font-size: 16px;
+}
+.goodsList .select .price .old{
+  color: #767676;
+  text-decoration: line-through;
+}
+.goodsList .select .buy{
+  width: 60%;
+  margin: 0 auto;
+  background-color: #EB625C;
+  color: #fff;
+  padding: 10px 0;
+  font-size: 12px;
+}

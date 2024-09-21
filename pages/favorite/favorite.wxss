@@ -1,0 +1,35 @@
+page{
+  background-color: #f5f5f5;
+}
+view{
+  background-color: #fff;
+}
+.favoriteList{
+  height: 80px;
+  padding: 10px 10px;
+  border-bottom: 1px solid #898989;
+}
+.favoriteList>image{
+  float: left;
+  width: 100px;
+  margin-right: 10px;
+}
+.favoriteList .content{
+  float: left;
+}
+.favoriteList .content .title{
+  font-size: 18px;
+}
+.favoriteList .content .price{
+  margin: 8px 0;
+  color: #EB625C;
+  font-size: 14px;
+}
+.favoriteList .del{
+  width: 30px;
+  float: right;
+  margin: 40px 10px 0 0;
+}
+.favoriteList .del image{
+  width: 100%;
+}

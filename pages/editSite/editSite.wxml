@@ -1,0 +1,32 @@
+<view class="username">
+  <view class="pp">收货人</view>
+  <view class="info">
+    <view class="ii">
+      <text>姓名</text>
+      <input type="text" name="" id="" value="Faniu" />
+    </view>
+    <view class="ii">
+      <text>电话</text>
+      <input type="text" name="" id="" value="18138113339" />
+    </view>
+  </view>
+  
+</view>
+<view class="username">
+  <view class="pp">收货地址</view>
+  <view class="info">
+    <view class="ii">
+      <text>地区信息</text>
+      <input type="text" name="" id="" value="广东省清远市清城区东城街道" />
+    </view>
+    <view class="ii">
+      <text>信息地址</text>
+      <input type="text" name="" id="" value="南华工商职业学院" />
+    </view>
+  </view>
+  
+</view>
+<view class="down">
+  <view class="del" bindtap="">删除</view>
+  <view class="save" bindtap="">保存并使用</view>
+</view>

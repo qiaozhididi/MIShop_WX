@@ -1,0 +1,17 @@
+<scroll-view class="left" scroll-y="true" style="height:{{Hei}}px" scroll-with-animation="true" scroll-top="{{scrollTops}}">
+  <view class="leftItem" style="min-height:{{Hei}}px">
+    <view class="{{tabIndex == index ? 'con' : ''}}" wx:for="{{leftList}}" bindtap="tabClick" data-index="{{index}}" wx:key="index">{{item}}</view>
+  </view>
+</scroll-view>
+
+<scroll-view class="right" scroll-y="true" style="height:{{Hei}}px;" scroll-with-animation="true" scroll-into-view="scroll-{{rightIndex}}" bindscroll="scrollRight">
+    <view class="rightItem">
+      <view class="modular" wx:for="{{rightList}}" wx:for-item="item" id="scroll-{{index}}">
+        <view class="head">—— {{item.head}} ——</view>
+          <view class="part" wx:for="{{item.partList}}" wx:for-item="part">
+            <image src="{{part.img}}" mode="widthFix"></image>
+            <view class="title">{{part.title}}</view>
+          </view>
+      </view>
+    </view>
+</scroll-view>

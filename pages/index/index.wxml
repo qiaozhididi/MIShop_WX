@@ -1,0 +1,42 @@
+<!--pages/index/index.wxml-->
+<view>
+  <!-- 轮播图 -->
+  <swiper indicator-dots="true" indicator-color="rgba(255,255,255,1)" indicator-active-color="#FB6600" autoplay="true" interval="3000" circular="true" style="height:{{Hei}}">
+    <block wx:for="{{swiperImg}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item}}" mode="widthFix" bindload="imgH"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 列表 -->
+  <view class="list" >
+    <view class="lists" wx:for="{{listImg}}"wx:key="*this">
+      <image src="{{item}}" mode="widthFix"></image>
+    </view>
+  </view>
+  <!--  -->
+  <image src="../../images/one.jpg" mode="widthFix"></image>
+  <!-- 每日精选 -->
+  <view class="goodsList" wx:for="{{goodsList}}" wx:for-item="goods" wx:key="index">
+    <image src="{{goods.imgSrc}}" mode="widthFixs"></image>
+      <view class="select" wx:for="{{goods.selectGoods}}" wx:for-item="sel" wx:for-index="id" wx:key="id">
+        <view class="select-mar">
+          <image src="{{sel.img}}" mode="widthFix"></image>
+            <view class="title">
+              <text>{{sel.title}}</text>
+            </view>
+            <view class="dec">
+              <text>{{sel.dec}}</text>
+            </view>
+            <view class="price">
+              <text class="new">￥{{sel.newPrice}}</text>
+              <text>起</text>
+              <text class="old">{{sel.oldPrice}}</text>
+            </view>
+            <navigator url="/pages/detail/detail">
+              <view class="buy" bindtap="getDetailsId" data-index="{{index}}" data-id="{{id}}">立即购买</view>
+          </navigator>
+          </view>
+        </view>
+      </view>
+</view>

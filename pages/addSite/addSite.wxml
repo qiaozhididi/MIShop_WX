@@ -1,0 +1,60 @@
+<view>
+  <!-- 收货人 -->
+  <view class="consignee" >
+    <view class="text">收货人</view>
+    <view class="item">
+      <view class="name one two">
+        <text>姓名</text>
+        <input type="text" name="" id="" placeholder="真实姓名" bindinput="getName" value="{{name}}" />
+      </view>
+      <view class="phone one">
+        <text>电话</text>
+        <input type="text" name="" id="" placeholder="手机号码" bindinput="getPhone" value="{{phone}}" />
+      </view>
+    </view>
+    
+  </view>
+  <!-- 收货地址 -->
+  <view class="site">
+    <view class="text">收货地址</view>
+    <view class="item">
+      <view class="areaInfo one two">
+        <text>地区信息</text>
+        <input type="text" name="" id="" placeholder="选择 省/市/区" bindfocus="showSite" value="{{areaInfo}}" />
+      </view>
+      <view class="detailSite one">
+        <text>详细地址</text>
+        <input type="text" name="" id="" placeholder="街道门牌、楼层房间号等信息" bindinput="getDetailSite" value="{{detailSite}}" />
+      </view>
+    </view>
+    
+  </view>
+  <!-- 底部 -->
+  <view class="down" wx:if="{{isBlock}}" bindtap="saveUse">保存并使用</view>
+
+  <view class="down" wx:else>
+    <view class="del" bindtap="delData">删除</view>
+    <view class="save" bindtap="editUse">保存并使用</view>
+  </view>
+  
+  <!-- 地址联动 -->
+  <view class="bg" wx:if="{{showAddress}}" bindtap="hideSite"></view>
+  <view class="address" wx:if="{{showAddress}}">
+    <view class="btn">
+      <view class="cancel" bindtap="hideSite">取消</view>
+      <view class="sure" bindtap="getAreaInfo">确定</view>
+    </view>
+    <picker-view bindchange="cityChange" value="{{value}}">
+      <picker-view-column>
+        <view wx:for="{{provinces}}" wx:key="*this">{{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{citys}}" wx:key="*this">{{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{areas}}" wx:key="*this">{{item.name}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+
+</view>

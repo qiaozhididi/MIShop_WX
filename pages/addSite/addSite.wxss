@@ -1,0 +1,102 @@
+page{
+  background-color: #f5f5f5;
+  font-size: 16px;
+}
+.consignee{
+  width: 95%;
+  margin: 20px auto;
+}
+.text{
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #727272;
+}
+.item{
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 20px;
+}
+.one{
+  height: 40px;
+  line-height: 40px;
+}
+.one input{
+  width: 70%;
+  float: right;
+  height: 40px;
+  color: #727272;
+  font-size: 14px;
+}
+.two{
+  border-bottom: 1px solid #f5f5f5;
+}
+.site{
+  width: 95%;
+  margin: 20px auto;
+}
+.down{
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  /* border-top: 1px solid #000; */
+  position: fixed;
+  bottom: 0;
+  left: 0;color: #fff;
+  text-align: center;
+  line-height: 60px;
+  background: linear-gradient(to right,#FF7D01,#FC592E);
+}
+.down .del{
+  color: red;
+  text-align: center;
+  line-height: 60px;
+  background:#fff;
+  width: 50%;
+  float: left;
+}
+.down .save{
+  color: #fff;
+  text-align: center;
+  line-height: 60px;
+  background: linear-gradient(to right,#FF7D01,#FC592E);
+  width: 50%;
+  float: right;
+}
+/* 地址联动 */
+.bg{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 8;
+  background: rgba(0, 0, 0, 0.3);
+}
+.address{
+  width: 100%;
+  height: 300px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 9;
+}
+.address .btn{
+  width: 90%;
+  line-height: 40px;
+  margin: 10px auto;
+  overflow: hidden;
+}
+.address .btn .cancel{
+  float: left;
+}
+.address .btn .sure{
+  float: right;
+}
+.address picker-view{
+  width: 90%;
+  height: 300px;
+  margin: 0 auto;
+  text-align: center;
+}

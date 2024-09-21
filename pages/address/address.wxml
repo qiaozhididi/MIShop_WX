@@ -1,0 +1,22 @@
+<view>
+  <view class="address" wx:for="{{addressList}}" wx:for-index="id" wx:key="*this">
+    <view class="getSiteIndex" bindtap="getSiteIndex" data-id="{{id}}"></view>
+    <view class="item">
+      <view class="info">
+        <text>{{item.phone}}</text>
+        <text>{{item.name}}</text>
+        <text>收</text>
+      </view>
+      <view class="site">
+        <text>{{item.areaInfo}}</text>
+        <text>{{item.detailSite}}</text>
+      </view>
+      <image src="../../images/edit.png" mode="widthFix" bindtap="editData" data-index="{{id}}"></image>
+    </view>
+    
+  </view>
+
+  <view class="down">
+    <view class="btn" bindtap="addSite">新增地址</view>
+  </view>
+</view>

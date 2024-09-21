@@ -1,0 +1,14 @@
+<view class="favoriteList" wx:for="{{favoriteList}}" wx:key="*this">
+    <image src="{{item.img}}" mode="widthFix"></image>
+    <view class="content">
+      <view class="title">
+        <text>{{item.title}}</text>
+      </view>
+      <view class="price">
+        <text>￥{{item.price}}</text>
+      </view>
+    </view>
+    <view class="del">
+      <image src="../../images/shanchu.png" mode="widthFix"  bindtap="deleteGoods" bindtap="deleteGoods" data-id="{{index}}"></image>
+    </view>
+  </view>

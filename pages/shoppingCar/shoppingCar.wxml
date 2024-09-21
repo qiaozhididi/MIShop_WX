@@ -1,0 +1,48 @@
+<!--pages/shoppingCar/shoppingCar.wxml-->
+<view wx:if="{{isBlock}}">
+  <!-- 商品 -->
+  <view class="carGoods" wx:for="{{carList}}" wx:key="*this">
+    <checkbox-group bindchange="change" data-id="{{index}}">
+      <checkbox value="选中" checked="{{item.carCheck}}" color="#FB6600"></checkbox>
+    </checkbox-group>
+    <image src="{{item.carImg}}" mode="widthFix"></image>
+    <view class="content">
+      <view class="title">
+        <text>{{item.carTitle}}</text>
+      </view>
+      <view class="price">
+        <text>￥{{item.carPrice}}</text>
+      </view>
+      <view class="num">
+        <view class="reduce">
+          <text bindtap="reduceNum" data-id="{{index}}">-</text>
+        </view>
+        <view class="number">
+          <text>{{item.carNum}}</text>
+        </view>
+        <view class="add">
+          <text bindtap="addNum" data-id="{{index}}">+</text>
+        </view>
+      </view>
+    </view>
+    <view class="del">
+      <image src="../../images/shanchu.png" mode="widthFix"  bindtap="deleteGoods" data-id="{{index}}"></image>
+    </view>
+  </view>
+  <!-- 结算 -->
+  <view class="down">
+    <view class="total">
+      <text>总价：</text>
+      <text class="totalPrice" bindtap="totalPrice" data-id="{{index}}">￥{{totalPrice}}</text>
+    </view>
+    <view class="settlement" bindtap="toSettlement">结算</view>
+  </view>
+</view>
+
+<view class="car" wx:if="{{isNone}}">
+  <view class="cart_icon">
+    <image src="../../images/shoppingCar.png" mode="widthFix"></image>
+  </view>
+  <view class="prompt">您的购物车暂无宝贝</view>
+  <view class="toIndex" bindtap="toIndex">到小米商城逛逛</view>
+</view>

@@ -1,0 +1,48 @@
+.left{
+  width: 25%;
+  /* height: 600px; */
+  border-right: 1px solid #EDEDED;
+  float: left;
+}
+/* .left .leftItem{
+  height: 1000px;
+} */
+.left .leftItem view{
+  text-align: center;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+}
+.left .leftItem .con{
+  color: #FB6600;
+}
+.right{
+  width: 74%;
+  float: left;
+  /* height: 580px; */
+}
+.right .rightItem{
+  width: 100%;
+  text-align: center;
+}
+.right .rightItem .modular{
+  width: 100%;
+  overflow: hidden;
+}
+.right .rightItem .modular .head{
+  padding: 20px 0;
+  font-size: 20px;
+}
+.right .rightItem .modular .part{
+  width: 25%;
+  float: left;
+  margin: 0 0 20px 20px;
+  height: 80px;
+}
+.right .rightItem .modular .part image{
+  width: 100%;
+}
+.right .rightItem .modular .part .title{
+  font-size: 13px;
+  color: #616161;
+}
