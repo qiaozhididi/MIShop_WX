@@ -5,28 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    username:'',
-    userimg:'',
-    orderList:[
-      {
-        img:'../../images/待付款.png',
-        name:'待付款',
-        index:1
+    userInfo: {},
+    hasUserInfo: false,
+    canIUseGetUserProfile: false,
+    orderList: [{
+        img: '../../images/待付款.png',
+        name: '待付款',
+        index: 1
       },
       {
-        img:'../../images/待收货.png',
-        name:'待收货',
-        index:2
+        img: '../../images/待收货.png',
+        name: '待收货',
+        index: 2
       },
       {
-        img:'../../images/全部订单.png',
-        name:'全部订单',
-        index:0
+        img: '../../images/全部订单.png',
+        name: '全部订单',
+        index: 0
       }
     ]
   },
   // 
-  getOrderIndex:function(e){
+  getOrderIndex: function (e) {
     wx.navigateTo({
       url: '/pages/order/order?id=' + e.target.dataset.index
     })
@@ -35,26 +35,31 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    var that = this
-    wx.login({
-      success (res){
-        if(res.code){
-          wx.getUserInfo({
-            success:function(res){
-              var userInfo = res.userInfo
-              var nickName = userInfo.nickName
-              var avatarUrl = userInfo.avatarUrl
-              that.setData({
-                username:nickName,
-                userimg:avatarUrl
-              })
-            }
-          })
-        }else{
-          console.log('登陆失败' + res.errMsg)
-        }
+  onLoad() {
+    if (wx.getUserProfile) {
+      this.setData({
+        canIUseGetUserProfile: true
+      })
+    }
+  },
+  getUserProfile(e) {
+    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
+    // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
+    wx.getUserProfile({
+      desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
       }
+    })
+  },
+  getUserInfo(e) {
+    // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
     })
   },
 

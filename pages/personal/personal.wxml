@@ -1,11 +1,16 @@
 <view>
   <view class="userInfo">
     <view class="item">
-      <image src="{{userimg}}" class="userimg"></image>
-      <view class="username">{{username}}</view>
-      <navigator url="/pages/applets/applets">
-        <image src="../../images/erweima.png" mode="widthFix" class="code"></image>
-      </navigator>
+      <block wx:if="{{!hasUserInfo}}">
+        <button class="infoBtn" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取用户信息 </button>
+      </block>
+      <block wx:else>
+        <image src="{{userInfo.avatarUrl}}" class="userimg"></image>
+        <view class="username">{{userInfo.nickName}}</view>
+        <navigator url="/pages/applets/applets">
+          <image src="../../images/erweima.png" mode="widthFix" class="code"></image>
+        </navigator>
+      </block>
     </view>
   </view>
   <view class="order">
@@ -17,11 +22,11 @@
   <view class="title">我的服务</view>
   <view class="server">
     <navigator url="/pages/address/address">
-    <view class="serverItem">
-      <image src="../../images/dizhi.png" mode="widthFix"></image>
-      <view>我的地址</view>
-    </view>
-  </navigator>
+      <view class="serverItem">
+        <image src="../../images/dizhi.png" mode="widthFix"></image>
+        <view>我的地址</view>
+      </view>
+    </navigator>
     <navigator url="/pages/favorite/favorite">
       <view class="serverItem">
         <image src="../../images/shoucang.png" mode="widthFix"></image>

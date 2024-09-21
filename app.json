@@ -15,7 +15,7 @@
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#1E6EFF",
+    "navigationBarBackgroundColor": "#FB6600",
     "navigationBarTitleText": "Frato",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true,

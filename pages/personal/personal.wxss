@@ -1,46 +1,61 @@
-page{
+page {
   background-color: #F5F5F5;
 }
-.userInfo{
+
+.userInfo {
   width: 100%;
   background-color: #FF6600;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-.userInfo .item{
+
+
+
+.userInfo .item {
   width: 80%;
   height: 80px;
   margin: 0 auto;
-  padding-bottom: 80px;
+  padding-top: 20px;
+  padding-bottom: 60px;
   position: relative;
 }
-.userInfo .item .userimg{
+
+.userInfo .item .infoBtn {
+  width: 200px;
+  position: relative;
+  top: 20%;
+}
+
+.userInfo .item .userimg {
   width: 80px;
   height: 80px;
   border-radius: 40px;
   /* margin: 0 20px; */
 }
-.userInfo .item .username{
+
+.userInfo .item .username {
   width: 150px;
   height: 24px;
   overflow: hidden;
   color: #fff;
   position: absolute;
-  top: 28px;
+  top: 45px;
   left: 100px;
   font-size: 18px;
 }
-.userInfo .item .code{
+
+.userInfo .item .code {
   width: 40px;
   height: 40px;
   position: absolute;
   right: 0;
-  top:20px;
+  top: 40px;
 }
+
 /* 订单 */
-.order{
+.order {
   width: 90%;
-  height: 120px;
+  height: 80px;
   background-color: #fff;
   border-radius: 10px;
   text-align: center;
@@ -48,24 +63,28 @@ page{
   position: relative;
   top: -50px;
 }
-.order .orderItem{
+
+.order .orderItem {
   width: 33.3%;
   float: left;
   margin-top: 10px;
 }
-.order .orderItem image{
+
+.order .orderItem image {
   width: 35%;
   margin-top: 10px 0 5px;
 }
+
 /* 服务 */
-.title{
+.title {
   width: 90%;
   margin: 0 auto;
   font-size: 22px;
   position: relative;
   top: -25px;
 }
-.server{
+
+.server {
   width: 90%;
   height: 100px;
   background-color: #fff;
@@ -73,11 +92,13 @@ page{
   text-align: center;
   margin: 0 auto;
 }
-.server .serverItem{
+
+.server .serverItem {
   width: 33.3%;
   float: left;
 }
-.server .serverItem image{
+
+.server .serverItem image {
   width: 35%;
   margin-top: 10px 0 5px;
 }
